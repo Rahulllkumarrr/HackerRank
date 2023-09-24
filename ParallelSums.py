@@ -66,6 +66,34 @@ def part(arr, expected_sum, left=[], right=[]):
             return None, None
 
 
+def findSubsequences(arr, expected_sum):
+    i = 1
+    j = len(arr) - 1
+    left = [arr[0]]
+    while i < j:
+        left = arr[:i]
+        j += 1
+    return None
+
+def isLeft(left, right):
+    if sum(left) <= sum(right):
+        return True
+    else:
+        return False
+
+def getSubArray(arr, left, i, j):
+    itr = len(arr) - 1
+    left = []
+    right = []
+    while arr:
+        if len(arr) - j -1 == itr:
+            left.append(arr[itr])
+        elif isLeft(left, right, arr[itr]):
+            left.append()
+
+
+
+
 def sortSubArrays(left, right):
     if min(left) <= min(right):
         return sorted(left), sorted(right)
